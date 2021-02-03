@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  @apply text-lg;
+}
+
 h1, h2, h3, #subtitle {
   @apply motion-safe:animate-fadeIn;
 }
