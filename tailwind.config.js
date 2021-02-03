@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: {
     mode: "all",
@@ -26,5 +28,22 @@ module.exports = {
   variants: {
     animation: ["motion-safe"]
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.filter-none': {
+          filter: 'none',
+        },
+        '.filter-grayscale': {
+          filter: 'grayscale(100%)',
+        },
+      }
+
+      addUtilities(newUtilities, {
+        variants: ['responsive', 'hover'],
+      })
+    })
+  ],
 };
