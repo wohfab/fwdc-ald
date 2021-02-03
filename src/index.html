@@ -1,22 +1,40 @@
 ---
 layout: default
-title: Neat Starter
+title: Anna-Lena Delger
+subtitle: vocal jazz & piano.
 path: home
+links: true
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+<div class="px-6">
+  <div class="">
+    <h1 class="font-bold text-indigo-500 motion-safe:animate-fadeIn">{{ title }}</h1>
+    <p class="text-center text-xl text-gray-700 font-mono">{{ subtitle }}</p>
+  </div>
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+  <div class="">
+    {{ homepage.intro | safe }}
+  </div>
 
+    <div class="">
+    {{ homepage.vita | safe }}
+  </div>
+
+    <div class="">
+    {{ homepage.concerts | safe }}
+  </div>
+
+  <div class="">
+    {% if gallery.items %}
+      <ul class="">
+        {% for image in gallery.items %}
+        <li><img src="{{ image.src }}" alt="" /></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  {% if links %}
   {% include "./_includes/partials/content.html" %}
+  {% endif %}
 </div>

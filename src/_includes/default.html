@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ settings.language }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
@@ -19,12 +19,12 @@
   <body>
     {% include "./partials/navbar.html" %}
 
-    {{ content | safe }}
+    <div id="main-content" class="flex">{{ content | safe }}</div>
 
     {% include "./partials/footer.html" %}
 
     <script src="/static/js/alpine.js"></script>
-
+  
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
       <!-- Needed only if you are using Netlify Identity feature -->

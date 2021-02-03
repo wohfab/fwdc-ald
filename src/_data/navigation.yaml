@@ -1,10 +1,10 @@
 ---
 items:
-  - text: Menu One
+  - text: Welcome
     url: "#"
-  - text: Menu Two
+  - text: Vita
     url: "#"
-  - text: Menu Three
+  - text: Concerts
     url: "#"
-  - text: Blog
-    url: "/blog"
+  - text: Gallery
+    url: "#"
