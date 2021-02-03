@@ -12,27 +12,35 @@ links: true
     <p class="text-center text-xl text-gray-700 font-mono">{{ subtitle }}</p>
   </div>
 
+  <img src="/static/img/ai.jpg" width="200" />
+
+  {% if homepage.intro %}
   <div class="">
     {{ homepage.intro | safe }}
   </div>
+  {% endif %}
 
-    <div class="">
+  {% if homepage.vita %}
+  <div class="">
     {{ homepage.vita | safe }}
   </div>
+  {% endif %}
 
-    <div class="">
+  {% if homepage.concerts %}
+  <div class="">
     {{ homepage.concerts | safe }}
   </div>
+  {% endif %}
 
+  {% if gallery.items %}
   <div class="">
-    {% if gallery.items %}
-      <ul class="">
-        {% for image in gallery.items %}
-        <li><img src="{{ image.src }}" alt="" /></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+    <ul class="">
+      {% for image in gallery.items %}
+      <li><img src="{{ image.src }}" alt="" /></li>
+      {% endfor %}
+    </ul>
   </div>
+  {% endif %}
 
   {% if links %}
   {% include "./_includes/partials/content.html" %}
