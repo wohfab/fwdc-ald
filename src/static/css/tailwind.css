@@ -36,10 +36,6 @@ p {
   @apply mb-3;
 }
 
-[id] {
-  scroll-margin-top: 2ex;
-}
-
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
