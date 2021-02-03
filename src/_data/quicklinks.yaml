@@ -1,5 +1,14 @@
 ---
 links:
-  - title: ✉️ Contact
-    url: "mailto:anna-lena.delger@mailadresse.de"
-    desc: Please contact me via email.
+  - title: YouTube
+    url: "https://www.youtube.com/channel/UC0ZyvD5AMgKkDKtQWrP3tNg/videos"
+    desc: Listen to my music on YouTube
+  - title: Instagram
+    url: "https://www.instagram.com/anna_lena_delger"
+    desc: Follow me on Instagram
+  - title: Vocability
+    url: "https://vocability.de"
+    desc: Follow the a cappella choir, I am conducting
+  - title: Contact
+    url: "mailto:"
+    desc: Contact me via email

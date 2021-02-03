@@ -4,12 +4,24 @@
 
 /*Your Custom CSS Goes here*/
 
+h1, h2, h3, #subtitle {
+  @apply motion-safe:animate-fadeIn;
+}
+
+h1, h2, h3 {
+  @apply font-bold my-3;
+}
+
 h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+  @apply text-4xl tracking-tighter text-center lg:text-7xl text-indigo-500 border-b-8 border-indigo-500 pb-2; 
+}
+
+h2 {
+  @apply text-3xl text-indigo-500;
 }
 
 h3 {
-  @apply text-2xl font-bold mb-3;
+  @apply text-2xl;
 }
 
 p {

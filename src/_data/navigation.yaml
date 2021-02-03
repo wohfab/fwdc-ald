@@ -1,10 +1,10 @@
 ---
 items:
   - text: Welcome
-    url: "#"
+    url: "#welcome"
   - text: Vita
-    url: "#"
+    url: "#vita"
   - text: Concerts
-    url: "#"
+    url: "#concerts"
   - text: Gallery
-    url: "#"
+    url: "#gallery"
