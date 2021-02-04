@@ -40,6 +40,16 @@ p {
   @apply fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50;
 }
 
+
+[id] {
+  scroll-margin-top: 16rem;
+}
+@media (min-width: 1024px) {
+  [id] {
+    scroll-margin-top: 1rem;
+  }
+}
+
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],
