@@ -13,3 +13,5 @@ concerts: No concerts :(
 gallery:
   - image: /static/img/ald.jpg
     alt: Anna-Lena Delger Portrait
+    jpg: /static/img/ald.jpg
+    webp: /static/img/ald.webp
