@@ -9,19 +9,19 @@ links: true
 <div class="px-6">
   <img
     src="/static/img/ald.jpg"
-    class="mx-auto filter-grayscale transition-all ease-in-out duration-1000 hover:filter-none"
+    class="w-full mx-auto duration-1000 ease-in-out transition-filter md:w-1/2 filter-grayscale hover:filter-none"
     alt="Anna-Lena Delger Portrait"
   />
   <div class="mx-auto w-max">
     <h1
       id="title"
-      class="bg-clip-text text-transparent bg-gradient-to-tr from-indigo-500 to-pink-500"
+      class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500"
     >
       {{ title }}
     </h1>
     <p
       id="subtitle"
-      class="text-center text-xl text-gray-700 font-mono tracking-widest"
+      class="font-mono text-xl tracking-widest text-center text-gray-700"
     >
       {{ subtitle }}
     </p>
@@ -110,22 +110,22 @@ links: true
 
   <h2 id="gallery">Gallery</h2>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 js-show-on-scroll"
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 js-show-on-scroll"
   >
     <div class="" x-data="{ open: false }">
       <img
         src="/static/img/ald.jpg"
-        class="w-full object-cover filter-grayscale"
+        class="object-cover w-full filter-grayscale"
         alt="Test Image"
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
+        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
         x-show="open"
       >
         <img
           src="/static/img/ald.jpg"
-          class="w-full object-cover filter-grayscale"
+          class="object-cover w-full filter-grayscale"
           alt="Test Image"
           @click="open = false"
         />
@@ -135,17 +135,17 @@ links: true
     <div class="" x-data="{ open: false }">
       <img
         src="/static/img/ald.jpg"
-        class="w-full object-cover filter-grayscale"
+        class="object-cover w-full filter-grayscale"
         alt="Test Image"
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
+        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
         x-show="open"
       >
         <img
           src="/static/img/ald.jpg"
-          class="w-full object-cover filter-grayscale"
+          class="object-cover w-full filter-grayscale"
           alt="Test Image"
           @click="open = false"
         />
@@ -155,17 +155,17 @@ links: true
     <div class="" x-data="{ open: false }">
       <img
         src="/static/img/ald.jpg"
-        class="w-full object-cover filter-grayscale"
+        class="object-cover w-full filter-grayscale"
         alt="Test Image"
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
+        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
         x-show="open"
       >
         <img
           src="/static/img/ald.jpg"
-          class="w-full object-cover filter-grayscale"
+          class="object-cover w-full filter-grayscale"
           alt="Test Image"
           @click="open = false"
         />
