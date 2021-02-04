@@ -21,113 +21,54 @@ links: true
       id="title"
       class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500"
     >
-      {{ title }}
+      {{ homepage.title }}
     </h1>
     <p
       id="subtitle"
       class="font-mono text-xl tracking-widest text-center text-gray-700"
     >
-      {{ subtitle }}
+      {{ homepage.subtitle }}
     </p>
   </div>
 
   <h2 id="welcome">Welcome</h2>
-  <p>
-    Non occaecat velit pariatur non velit cillum. Ea nulla in ea ea velit magna
-    eu dolor eu ea. Fugiat sit ut nisi duis consequat elit commodo laboris
-    ullamco labore deserunt culpa officia. Magna cillum duis do ullamco est.
-  </p>
-
-  <p>
-    Et in labore Lorem ad aliqua exercitation ut duis labore velit. Magna minim
-    Lorem fugiat commodo excepteur aliquip enim voluptate aute consequat id sit.
-    Amet proident aliqua sint et pariatur qui ipsum eiusmod. Dolore est quis
-    incididunt culpa excepteur nostrud adipisicing est commodo eiusmod veniam
-    tempor nulla eiusmod. Nisi ea ipsum enim est minim incididunt amet commodo
-    laborum nisi.
-  </p>
-
-  <p>
-    Laboris officia officia duis sint quis reprehenderit commodo sit ut. Ut
-    adipisicing duis do do velit ipsum id aute aliqua ut culpa ex. Amet amet
-    enim nostrud exercitation incididunt non qui officia culpa dolore eiusmod
-    magna in.
-  </p>
-
-  <p>
-    Commodo laborum proident sunt sint aute velit deserunt tempor ipsum sint
-    exercitation pariatur fugiat. Enim pariatur duis sit qui duis incididunt
-    tempor commodo exercitation magna. Minim aute enim dolor incididunt
-    exercitation esse. Consectetur nostrud dolore excepteur dolor do aliqua
-    fugiat laborum quis anim eu adipisicing sint cillum. Ullamco laboris in qui
-    occaecat ipsum incididunt sint non consequat ipsum.
-  </p>
-
-  <p>
-    Est qui non mollit reprehenderit laboris sit consequat cillum ullamco
-    consequat proident sint occaecat voluptate. Veniam irure non reprehenderit
-    excepteur minim mollit veniam consequat velit qui incididunt aliquip amet.
-    Tempor cupidatat ut sit tempor laboris deserunt labore reprehenderit culpa
-    esse velit eiusmod exercitation. Pariatur minim dolore adipisicing occaecat
-    non nostrud culpa eiusmod mollit.
-  </p>
+  {% if homepage.welcome %}
+  <div class="">{{ homepage.welcome | safe }}</div>
+  {% else %}
+  <p>Hi there! How are you? Welcome to this beautiful website.</p>
+  {% endif %} 
+  
   <h2 id="vita">Vita</h2>
-  <p>
-    Non occaecat velit pariatur non velit cillum. Ea nulla in ea ea velit magna
-    eu dolor eu ea. Fugiat sit ut nisi duis consequat elit commodo laboris
-    ullamco labore deserunt culpa officia. Magna cillum duis do ullamco est.
-  </p>
-
-  <p>
-    Et in labore Lorem ad aliqua exercitation ut duis labore velit. Magna minim
-    Lorem fugiat commodo excepteur aliquip enim voluptate aute consequat id sit.
-    Amet proident aliqua sint et pariatur qui ipsum eiusmod. Dolore est quis
-    incididunt culpa excepteur nostrud adipisicing est commodo eiusmod veniam
-    tempor nulla eiusmod. Nisi ea ipsum enim est minim incididunt amet commodo
-    laborum nisi.
-  </p>
-
-  <p>
-    Laboris officia officia duis sint quis reprehenderit commodo sit ut. Ut
-    adipisicing duis do do velit ipsum id aute aliqua ut culpa ex. Amet amet
-    enim nostrud exercitation incididunt non qui officia culpa dolore eiusmod
-    magna in.
-  </p>
+  {% if homepage.vita %}
+  <div class="">{{ homepage.vita | safe }}</div>
+  {% else %}
+  <p>The website is under construction. There will be more content soon!</p>
+  {% endif %} 
+  
   <h2 id="concerts">Concerts</h2>
-  <p>
-    Commodo laborum proident sunt sint aute velit deserunt tempor ipsum sint
-    exercitation pariatur fugiat. Enim pariatur duis sit qui duis incididunt
-    tempor commodo exercitation magna. Minim aute enim dolor incididunt
-    exercitation esse. Consectetur nostrud dolore excepteur dolor do aliqua
-    fugiat laborum quis anim eu adipisicing sint cillum. Ullamco laboris in qui
-    occaecat ipsum incididunt sint non consequat ipsum.
-  </p>
-
-  <p>
-    Est qui non mollit reprehenderit laboris sit consequat cillum ullamco
-    consequat proident sint occaecat voluptate. Veniam irure non reprehenderit
-    excepteur minim mollit veniam consequat velit qui incididunt aliquip amet.
-    Tempor cupidatat ut sit tempor laboris deserunt labore reprehenderit culpa
-    esse velit eiusmod exercitation. Pariatur minim dolore adipisicing occaecat
-    non nostrud culpa eiusmod mollit.
-  </p>
+  {% if homepage.concerts %}
+  <div class="">{{ homepage.concerts | safe }}</div>
+  {% else %}
+  <p>Sorry, there are no concerts planned at the moment.</p>
+  {% endif %} 
 
   {% if links %} 
     {% include "./_includes/partials/content.html" %}
   {% endif %}
 
   <h2 id="gallery">Gallery</h2>
-  <div
-    class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 js-show-on-scroll"
-  >
+  {% for image in homepage.gallery %}
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 js-show-on-scroll">
     <div class="" x-data="{ open: false }">
       <picture>
-      <source srcset="/static/img/ald.webp" type="image/webp">
-      <source srcset="/static/img/ald.jpg" type="image/jpg">
+      {% if image.webp %}
+      <source srcset="{{ image.webp }}" type="image/webp">
+      {% endif %}
+      <source srcset="{{ image.jpg }}" type="image/jpg">
         <img
-          src="/static/img/ald.jpg"
+          src="{{ image.jpg }}"
           class="object-cover w-full filter-grayscale"
-          alt="Test Image"
+          alt="{{ image.alt }}"
           @click="open = true"
         />
       </picture>
@@ -138,97 +79,18 @@ links: true
         x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
       >
         <picture>
-        <source srcset="/static/img/ald.webp" type="image/webp">
-        <source srcset="/static/img/ald.jpg" type="image/jpg">
+        {% if image.webp %}
+        <source srcset="{{ image.webp }}" type="image/webp">
+        {% endif %}
+        <source srcset="{{ image.jpg }}" type="image/jpg">
           <img
-            src="/static/img/ald.jpg"
+            src="{{ image.jpg }}"
             class="object-cover"
-            alt="Test Image"
+            alt="{{ image.alt }}"
          />
         </picture>
       </div>
     </div>
-
-    <div class="" x-data="{ open: false }">
-      <picture>
-      <source srcset="/static/img/ald.webp" type="image/webp">
-      <source srcset="/static/img/ald.jpg" type="image/jpg">
-        <img
-          src="/static/img/ald.jpg"
-          class="object-cover w-full filter-grayscale"
-          alt="Test Image"
-          @click="open = true"
-        />
-      </picture>
-      <div
-        class="modal"
-        x-show="open"
-        @click="open = false"
-        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
-      >
-        <picture>
-        <source srcset="/static/img/ald.webp" type="image/webp">
-        <source srcset="/static/img/ald.jpg" type="image/jpg">
-          <img
-            src="/static/img/ald.jpg"
-            class="object-cover"
-            alt="Test Image"
-          />
-        </picture>
-      </div>
-    </div>
-
-    <div class="" x-data="{ open: false }">
-      <picture>
-      <source srcset="/static/img/ald.webp" type="image/webp">
-      <source srcset="/static/img/ald.jpg" type="image/jpg">
-        <img
-          src="/static/img/ald.jpg"
-          class="object-cover w-full filter-grayscale"
-          alt="Test Image"
-          @click="open = true"
-        />
-      </picture>
-      <div
-        class="modal"
-        x-show="open"
-        @click="open = false"
-        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
-      >
-        <picture>
-        <source srcset="/static/img/ald.webp" type="image/webp">
-        <source srcset="/static/img/ald.jpg" type="image/jpg">
-          <img
-            src="/static/img/ald.jpg"
-            class="object-cover"
-            alt="Test Image"
-          />
-        </picture>
-      </div>
-    </div>
   </div>
-  
-  {% if homepage.intro %}
-  <div class="">{{ homepage.intro | safe }}</div>
-  {% endif %} 
-  
-  {% if homepage.vita %}
-  <div class="">{{ homepage.vita | safe }}</div>
-  {% endif %} 
-  
-  {% if homepage.concerts %}
-  <div class="">{{ homepage.concerts | safe }}</div>
-  {% endif %} 
-  
-  {% if gallery.items %}
-  <div class="">
-    <ul class="">
-      {% for image in gallery.items %}
-      <li><img src="{{ image.src }}" alt="" /></li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %} 
-  
-  
+  {% endfor %}
 </div>

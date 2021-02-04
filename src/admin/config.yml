@@ -12,35 +12,29 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  # - label: "Blog"
-  #   name: "blog"
-  #   folder: "src/posts"
-  #   create: true
-  #   editor:
-  #     preview: false
-  #   fields:
-  #     - { label: "Title", name: "title", widget: "string" }
-  #     - { label: "Description", name: "description", widget: "string" }
-  #     - { label: "Author", name: "author", widget: "string" }
-  #     - { label: "Publish Date", name: "date", widget: "datetime" }
-  #     - { label: "Body", name: "body", widget: "markdown" }
-  #     - widget: select
-  #       label: "tags"
-  #       name: "tags"
-  #       multiple: true
-  #       create: true
-  #       options: ["Tags", "created", "from", "config.yml"]
-  - label: "Homepage"
-    name: "homepage"
-    folder: "src/home"
-    create: true
-    fields:
-       - { label: "Title", name: "title", widget: "string", default: "Anna-Lena Delger" }
-       - { label: "Subtitle", name: "subtitle", widget: "string", default: "vocal jazz & piano." }
-       - { label: "Intro", name: "intro", widget: "markdown" }
-       - { label: "Vita", name: "vita", widget: "markdown" }
-       - { label: "Concerts", name: "concerts", widget: "markdown" }
-       - { label: "Gallery", name: "gallery", widget: "list", summary: "{{ fields.image }}", field: { label: "Image", name: "image", widget: "image" } }
+  - label: "Pages"
+    name: "pages"
+    files:
+    - label: "Homepage"
+      name: "homepage"
+      file: "src/_data/homepage.yaml"
+      fields:
+        - { label: "Title", name: "title", widget: "string", default: "Anna-Lena Delger" }
+        - { label: "Subtitle", name: "subtitle", widget: "string", default: "vocal jazz & piano." }
+        - { label: "Welcome", name: "welcome", widget: "markdown", default: "XYZ" }
+        - { label: "Vita", name: "vita", widget: "markdown", default: "XYZ" }
+        - { label: "Concerts", name: "concerts", widget: "markdown", default: "XYZ" }
+        - label: "Gallery"
+          name: "gallery"
+          widget: "list"
+          fields: 
+            - { label: "Image JPG/PNG", name: "jpg", widget: "image" }
+            - label: "Image WEBP"
+              name: "webp"
+              widget: "image"
+              pattern: ['.*\.webp', 'must end in ".webp"']
+              required: false
+            - { label: "Alt Text", name: "alt", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:
@@ -70,7 +64,7 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: URL, name: url, widget: string }
               - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
+      - label: "Global Site Settings"
         name: "settings"
         file: "src/_data/settings.yaml"
         fields:
