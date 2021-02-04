@@ -110,7 +110,7 @@ links: true
 
   <h2 id="gallery">Gallery</h2>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 js-show-on-scroll z-50"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 js-show-on-scroll"
   >
     <div class="" x-data="{ open: false }">
       <img
@@ -120,8 +120,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50"
-        style="background-color: rgba(0, 0, 0, 0.7)"
+        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
         x-show="open"
       >
         <img
@@ -141,8 +140,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50"
-        style="background-color: rgba(0, 0, 0, 0.7)"
+        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
         x-show="open"
       >
         <img
@@ -162,8 +160,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50"
-        style="background-color: rgba(0, 0, 0, 0.7)"
+        class="fixed top-0 left-0 flex items-center justify-center w-full h-full z-50 bg-black bg-opacity-50"
         x-show="open"
       >
         <img
@@ -175,7 +172,6 @@ links: true
       </div>
     </div>
   </div>
-
   {% if homepage.intro %}
   <div class="">{{ homepage.intro | safe }}</div>
   {% endif %} {% if homepage.vita %}

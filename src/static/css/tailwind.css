@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, #subtitle {
-  @apply motion-safe:animate-fadeIn;
+  @apply motion-safe:animate-fadeIn z-0;
 }
 
 h1, h2, h3 {
