@@ -1,9 +1,9 @@
 {% if quicklinks.links %}
-<h2 id="links" class="z-0">Links</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4 mb-8 lg:mx-0">
+<h2 id="links" class="">Links</h2>
+<div class="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 lg:mx-0">
     {% for item in quicklinks.links %}
-        <a href="{{item.url}}" target="_blank" class="p-5 border rounded border-gray-200 hover:border-purple-400">
-            <h3>{{item.title}}
+        <a href="{{item.url}}" target="_blank" class="p-5 border border-gray-200 rounded hover:border-purple-400">
+            <h3 class="">{{item.title}}
                 →</h3>
             <p>{{item.desc}}</p>
         </a>

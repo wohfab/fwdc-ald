@@ -13,15 +13,15 @@ body {
 }
 
 h1, h2, h3, #subtitle {
-  @apply motion-safe:animate-fadeIn z-0;
+  @apply z-0 motion-safe:animate-fadeIn;
 }
 
 h1, h2, h3 {
-  @apply font-bold my-3;
+  @apply my-3 font-bold;
 }
 
 h1 {
-  @apply text-4xl tracking-tighter text-center lg:text-7xl text-indigo-500 border-b-8 border-indigo-500 pb-2; 
+  @apply pb-2 text-4xl tracking-tighter text-center text-indigo-500 border-b-8 border-indigo-500 lg:text-7xl; 
 }
 
 h2 {
@@ -34,6 +34,10 @@ h3 {
 
 p {
   @apply mb-3;
+}
+
+.modal {
+  @apply fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50;
 }
 
 /* Syntax Highlighting*/

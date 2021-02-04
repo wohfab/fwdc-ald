@@ -6,5 +6,7 @@ items:
     url: "#vita"
   - text: Concerts
     url: "#concerts"
+  - text: Links
+    url: "#links"
   - text: Gallery
     url: "#gallery"

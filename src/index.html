@@ -108,6 +108,10 @@ links: true
     non nostrud culpa eiusmod mollit.
   </p>
 
+  {% if links %} 
+    {% include "./_includes/partials/content.html" %}
+  {% endif %}
+
   <h2 id="gallery">Gallery</h2>
   <div
     class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 js-show-on-scroll"
@@ -120,7 +124,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+        class="modal"
         x-show="open"
       >
         <img
@@ -140,7 +144,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+        class="modal"
         x-show="open"
       >
         <img
@@ -160,7 +164,7 @@ links: true
         @click="open = true"
       />
       <div
-        class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full bg-black bg-opacity-50"
+        class="modal"
         x-show="open"
       >
         <img
@@ -172,13 +176,20 @@ links: true
       </div>
     </div>
   </div>
+  
   {% if homepage.intro %}
   <div class="">{{ homepage.intro | safe }}</div>
-  {% endif %} {% if homepage.vita %}
+  {% endif %} 
+  
+  {% if homepage.vita %}
   <div class="">{{ homepage.vita | safe }}</div>
-  {% endif %} {% if homepage.concerts %}
+  {% endif %} 
+  
+  {% if homepage.concerts %}
   <div class="">{{ homepage.concerts | safe }}</div>
-  {% endif %} {% if gallery.items %}
+  {% endif %} 
+  
+  {% if gallery.items %}
   <div class="">
     <ul class="">
       {% for image in gallery.items %}
@@ -186,6 +197,7 @@ links: true
       {% endfor %}
     </ul>
   </div>
-  {% endif %} {% if links %} {% include "./_includes/partials/content.html" %}
-  {% endif %}
+  {% endif %} 
+  
+  
 </div>
