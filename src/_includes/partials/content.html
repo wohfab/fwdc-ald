@@ -2,7 +2,7 @@
 <h2 id="links" class="">Links</h2>
 <div class="grid grid-cols-1 gap-4 mb-8 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 lg:mx-0">
     {% for item in quicklinks.links %}
-        <a href="{{item.url}}" target="_blank" class="p-5 border border-gray-200 rounded hover:border-purple-400">
+        <a href="{{item.url}}" target="_blank" rel="noopener" class="p-5 border border-gray-200 rounded hover:border-purple-400">
             <h3 class="">{{item.title}}
                 →</h3>
             <p>{{item.desc}}</p>
