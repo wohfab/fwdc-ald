@@ -126,6 +126,28 @@ links: true
       <div
         class="modal"
         x-show="open"
+        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+      >
+        <img
+          src="/static/img/ald.jpg"
+          class="object-cover w-full filter-grayscale"
+          alt="Test Image"
+          @click="open = false"
+       />
+      </div>
+    </div>
+
+    <div class="" x-data="{ open: false }">
+      <img
+        src="/static/img/ald.jpg"
+        class="object-cover w-full filter-grayscale"
+        alt="Test Image"
+        @click="open = true"
+      />
+      <div
+        class="modal"
+        x-show="open"
+        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
       >
         <img
           src="/static/img/ald.jpg"
@@ -146,26 +168,7 @@ links: true
       <div
         class="modal"
         x-show="open"
-      >
-        <img
-          src="/static/img/ald.jpg"
-          class="object-cover w-full filter-grayscale"
-          alt="Test Image"
-          @click="open = false"
-        />
-      </div>
-    </div>
-
-    <div class="" x-data="{ open: false }">
-      <img
-        src="/static/img/ald.jpg"
-        class="object-cover w-full filter-grayscale"
-        alt="Test Image"
-        @click="open = true"
-      />
-      <div
-        class="modal"
-        x-show="open"
+        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
       >
         <img
           src="/static/img/ald.jpg"
