@@ -58,9 +58,9 @@ links: true
     {% include "./_includes/partials/content.html" %}
   {% endif %}
 
-  {% for image in homepage.gallery %}
   <h2 id="gallery">Gallery</h2>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 js-show-on-scroll">
+    {% for image in homepage.gallery %}
     <div class="" x-data="{ open: false }">
       <picture>
       {% if image.webp %}
@@ -93,6 +93,6 @@ links: true
         </picture>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
