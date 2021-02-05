@@ -12,8 +12,8 @@ body {
   @apply text-lg;
 }
 
-h1, h2, h3, #subtitle {
-  @apply z-0 motion-safe:animate-fadeIn;
+#hero {
+  @apply motion-safe:animate-fadeIn;
 }
 
 h1, h2, h3 {

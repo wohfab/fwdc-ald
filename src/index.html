@@ -7,28 +7,30 @@ links: true
 ---
 
 <div class="px-6">
-  <picture>
-  <source srcset="/static/img/ald.webp" type="image/webp">
-  <source srcset="/static/img/ald.jpg" type="image/jpg">
-    <img
-      src="/static/img/ald.jpg"
-      class="w-full mx-auto duration-1000 ease-in-out transition-filter md:w-1/2 filter-grayscale hover:filter-none"
-      alt="Anna-Lena Delger Portrait"
-    />
-  </picture>
-  <div class="mx-auto w-max">
-    <h1
-      id="title"
-      class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500"
-    >
-      {{ homepage.title }}
-    </h1>
-    <p
-      id="subtitle"
-      class="font-mono text-xl tracking-widest text-center text-gray-700"
-    >
-      {{ homepage.subtitle }}
-    </p>
+  <div id="hero">
+    <picture id="hero-image">
+    <source srcset="/static/img/ald.webp" type="image/webp">
+    <source srcset="/static/img/ald.jpg" type="image/jpg">
+      <img
+        src="/static/img/ald.jpg"
+        class="w-full mx-auto duration-1000 ease-in-out transition-filter md:w-1/2 filter-grayscale hover:filter-none"
+        alt="Anna-Lena Delger Portrait"
+      />
+    </picture>
+    <div class="mx-auto w-max">
+      <h1
+        id="title"
+        class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500"
+      >
+        {{ homepage.title }}
+      </h1>
+      <p
+        id="subtitle"
+        class="font-mono text-xl tracking-widest text-center text-gray-700"
+      >
+        {{ homepage.subtitle }}
+      </p>
+    </div>
   </div>
   
   {% if homepage.welcome %}
