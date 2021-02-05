@@ -19,6 +19,9 @@ body {
 div#hero-image {
   @apply w-full mx-auto transition-all duration-500 md:w-1/2 filter-grayscale hover:filter-none;
 }
+div#hero-image img {
+  @apply mx-auto;
+}
 
 h1,
 h2,
