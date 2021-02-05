@@ -58,6 +58,10 @@ p {
   }
 }
 
+[x-cloak] {
+  display: none;
+}
+
 /* Syntax Highlighting*/
 
 body :not(pre) > code[class*="language-"],

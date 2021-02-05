@@ -49,7 +49,7 @@ links: true
   <h2 id="gallery">Gallery</h2>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
     {% for img in homepage.gallery %}
-    <div class="" x-data="{ isOpen: false }">
+    <div class="" x-cloak x-data="{ isOpen: false }">
       <div
         class="object-cover w-full filter-grayscale js-show-on.scroll"
         @click="isOpen = true"
