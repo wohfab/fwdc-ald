@@ -8,13 +8,6 @@
     <title>{{ settings.name }}</title>
     {% block head %}{% endblock %}
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-    {% if prism == true %}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/static/css/prism-tomorrow.css"
-    />
-    {% endif %}
   </head>
   <body class="max-w-screen-xl mx-auto">
     {% include "./partials/navbar.html" %}
@@ -25,24 +18,7 @@
 
     <script src="/static/js/alpine.js"></script>
     <script>
-      const callback = function (entries) {
-        entries.forEach((entry) => {
-          console.log(entry);
-
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fadeIn");
-          } else {
-            entry.target.classList.remove("animate-fadeIn");
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(callback);
-      const targets = document.querySelectorAll(".js-show-on-scroll");
-      targets.forEach(function (target) {
-        target.classList.add("opacity-0");
-        observer.observe(target);
-      });
+      const callback = function (entries) { entries.forEach((entry) => { /* console.log(entry); */ if (entry.isIntersecting) { entry.target.classList.add("animate-fadeIn"); } else { entry.target.classList.remove("animate-fadeIn"); } }); }; const observer = new IntersectionObserver(callback); const targets = document.querySelectorAll(".js-show-on-scroll"); targets.forEach(function (target) { target.classList.add("opacity-0"); observer.observe(target); });
     </script>
 
     {% if path == "home" %}
