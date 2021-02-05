@@ -13,10 +13,16 @@ links: true
     </div>
 
     <div class="mx-auto w-max">
-      <h1 id="title" class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500">
+      <h1
+        id="title"
+        class="text-transparent bg-clip-text bg-gradient-to-tr from-indigo-500 to-pink-500"
+      >
         {{ homepage.title }}
       </h1>
-      <p id="subtitle" class="font-mono text-xl tracking-widest text-center text-gray-700">
+      <p
+        id="subtitle"
+        class="font-mono text-xl tracking-widest text-center text-gray-700"
+      >
         {{ homepage.subtitle }}
       </p>
     </div>
@@ -44,17 +50,17 @@ links: true
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
     {% for img in homepage.gallery %}
     <div class="" x-data="{ isOpen: false }">
-      <div class="object-cover w-full filter-grayscale js-show-on.scroll" @click="isOpen = true"
-        @click.away="isOpen = false">
-        {% image "./src" + img.src, img.alt  %}
+      <div
+        class="object-cover w-full filter-grayscale js-show-on.scroll"
+        @click="isOpen = true"
+        @click.away="isOpen = false"
+      >
+        {% image "./src" + img.src, img.alt %}
       </div>
       <div class="modal" x-show.transition.duration.300ms="isOpen">
-        <div class="object-cover">
-          {% image "./src" + img.src, img.alt  %}
-        </div>
+        <div class="object-cover">{% image "./src" + img.src, img.alt %}</div>
       </div>
     </div>
     {% endfor %}
-
   </div>
 </div>

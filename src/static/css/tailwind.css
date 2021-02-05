@@ -16,16 +16,18 @@ body {
   @apply motion-safe:animate-fadeIn;
 }
 
-div#hero-image  {
+div#hero-image {
   @apply w-full mx-auto transition-all duration-500 md:w-1/2 filter-grayscale hover:filter-none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   @apply my-3 font-bold;
 }
 
 h1 {
-  @apply pb-2 text-4xl tracking-tighter text-center text-indigo-500 border-b-8 border-indigo-500 lg:text-7xl; 
+  @apply pb-2 text-4xl tracking-tighter text-center text-indigo-500 border-b-8 border-indigo-500 lg:text-7xl;
 }
 
 h2 {
@@ -43,7 +45,6 @@ p {
 .modal {
   @apply fixed inset-0 z-50 flex items-center justify-center w-full h-full transition-all duration-700 bg-black bg-opacity-75;
 }
-
 
 [id] {
   scroll-margin-top: 16rem;

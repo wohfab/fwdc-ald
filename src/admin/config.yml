@@ -15,26 +15,46 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
-    - label: "Homepage"
-      name: "homepage"
-      file: "src/_data/homepage.yaml"
-      fields:
-        - { label: "Title", name: "title", widget: "string", default: "Anna-Lena Delger" }
-        - { label: "Subtitle", name: "subtitle", widget: "string", default: "vocal jazz & piano." }
-        - { label: "Welcome", name: "welcome", widget: "markdown", default: "XYZ" }
-        - { label: "Vita", name: "vita", widget: "markdown", default: "XYZ" }
-        - { label: "Concerts", name: "concerts", widget: "markdown", default: "XYZ" }
-        - label: "Gallery"
-          name: "gallery"
-          widget: "list"
-          fields: 
-            - { label: "Image JPG/PNG", name: "jpg", widget: "image" }
-            - label: "Image WEBP"
-              name: "webp"
-              widget: "image"
-              pattern: ['.*\.webp', 'must end in ".webp"']
-              required: false
-            - { label: "Alt Text", name: "alt", widget: "string" }
+      - label: "Homepage"
+        name: "homepage"
+        file: "src/_data/homepage.yaml"
+        fields:
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              default: "Anna-Lena Delger",
+            }
+          - {
+              label: "Subtitle",
+              name: "subtitle",
+              widget: "string",
+              default: "vocal jazz & piano.",
+            }
+          - {
+              label: "Welcome",
+              name: "welcome",
+              widget: "markdown",
+              default: "XYZ",
+            }
+          - { label: "Vita", name: "vita", widget: "markdown", default: "XYZ" }
+          - {
+              label: "Concerts",
+              name: "concerts",
+              widget: "markdown",
+              default: "XYZ",
+            }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Image JPG/PNG", name: "jpg", widget: "image" }
+              - label: "Image WEBP"
+                name: "webp"
+                widget: "image"
+                pattern: ['.*\.webp', 'must end in ".webp"']
+                required: false
+              - { label: "Alt Text", name: "alt", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:

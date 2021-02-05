@@ -35,7 +35,6 @@ async function imageShortcode(src, alt, sizes) {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
-
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
   eleventyConfig.setUseGitIgnore(false);
@@ -50,7 +49,10 @@ module.exports = function (eleventyConfig) {
     );
   });
   // current year
-  eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode(
+    "currentYear",
+    () => `${new Date().getFullYear()}`
+  );
 
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -86,7 +88,7 @@ module.exports = function (eleventyConfig) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
       return minified;
     }
@@ -103,7 +105,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-  
+
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
   return {
@@ -112,5 +114,4 @@ module.exports = function (eleventyConfig) {
     },
     htmlTemplateEngine: "njk",
   };
-
 };
