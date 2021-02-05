@@ -24,5 +24,6 @@ gallery:
     alt: Anna-Lena Delger Portrait
     jpg: /static/img/ald.jpg
     webp: /static/img/ald.webp
-  - jpg: /static/img/dc_08114-edit.jpg
+  - jpg: /static/img/gypsymaus.jpg
     alt: Sweet cat looking into the camera
+    webp: /static/img/gypsymaus.webp
