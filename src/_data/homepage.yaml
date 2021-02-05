@@ -20,6 +20,5 @@ vita: >-
   Seit meinem Abschluss 2019 studiere ich nun Chorleitung bei Prof. Timo Nuoranne an der Robert Schumann Hochschule in Düsseldorf.
 concerts: No concerts planned at the moment.
 gallery:
-  - jpg: /static/img/ald.jpg
-    webp: /static/img/ald.webp
+  - src: /static/img/ald.jpg
     alt: Anna-Lena Delger Portrait

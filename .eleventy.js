@@ -9,8 +9,19 @@ async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [600, 900],
     formats: ["webp", "jpeg"],
-    urlPath: "/static/img/",
+    urlPath: "./static/img/",
     outputDir: "./_site/static/img/",
+    sharpJpegOptions: {
+      quality: 70,
+      progressive: true,
+    },
+    sharpPngOptions: {
+      quality: 70,
+      progressive: true,
+    },
+    sharpWebpOptions: {
+      quality: 70,
+    },
   });
 
   let imageAttributes = {
