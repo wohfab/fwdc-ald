@@ -9,8 +9,8 @@ links: true
 <div class="px-6">
   <div id="hero">
     <picture id="hero-image">
-    <source srcset="/static/img/ald.webp" type="image/webp">
-    <source srcset="/static/img/ald.jpg" type="image/jpg">
+      <source srcset="/static/img/ald.webp" type="image/webp" />
+      <source srcset="/static/img/ald.jpg" type="image/jpg" />
       <img
         src="/static/img/ald.jpg"
         class="w-full mx-auto duration-1000 ease-in-out transition-filter md:w-1/2 filter-grayscale hover:filter-none"
@@ -32,44 +32,37 @@ links: true
       </p>
     </div>
   </div>
-  
+
   {% if homepage.welcome %}
   <h2 id="welcome">Welcome</h2>
   <div class="">{{ homepage.welcome | md | safe }}</div>
   {% else %}
   <p>Hi there! How are you? Welcome to this beautiful website.</p>
-  {% endif %} 
-  
-  {% if homepage.vita %}
+  {% endif %} {% if homepage.vita %}
   <h2 id="vita">Vita</h2>
   <div class="">{{ homepage.vita | md | safe }}</div>
   {% else %}
   <p>The website is under construction. There will be more content soon!</p>
-  {% endif %}
-  
-  {% if homepage.concerts %}
+  {% endif %} {% if homepage.concerts %}
   <h2 id="concerts">Concerts</h2>
   <div class="">{{ homepage.concerts | md | safe }}</div>
   {% else %}
   <p>Sorry, there are no concerts planned at the moment.</p>
-  {% endif %} 
-
-  {% if links %} 
-    {% include "./_includes/partials/content.html" %}
+  {% endif %} {% if links %} {% include "./_includes/partials/content.html" %}
   {% endif %}
 
   <h2 id="gallery">Gallery</h2>
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 ">
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
     {% for image in homepage.gallery %}
     <div class="" x-data="{ open: false }">
-      <picture class="js-show-on-scroll">
-      {% if image.webp %}
-      <source srcset="{{ image.webp }}" type="image/webp">
-      {% endif %}
-      <source srcset="{{ image.jpg }}" type="image/jpg">
+      <picture>
+        {% if image.webp %}
+        <source srcset="{{ image.webp }}" type="image/webp" />
+        {% endif %}
+        <source srcset="{{ image.jpg }}" type="image/jpg" />
         <img
           src="{{ image.jpg }}"
-          class="object-cover w-full filter-grayscale"
+          class="object-cover w-full filter-grayscale js-show-on-scroll"
           alt="{{ image.alt }}"
           @click="open = true"
         />
@@ -78,18 +71,23 @@ links: true
         class="modal"
         x-show="open"
         @click="open = false"
-        x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
+        x-transition:enter="ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
       >
         <picture>
-        {% if image.webp %}
-        <source srcset="{{ image.webp }}" type="image/webp">
-        {% endif %}
-        <source srcset="{{ image.jpg }}" type="image/jpg">
+          {% if image.webp %}
+          <source srcset="{{ image.webp }}" type="image/webp" />
+          {% endif %}
+          <source srcset="{{ image.jpg }}" type="image/jpg" />
           <img
             src="{{ image.jpg }}"
             class="object-cover"
             alt="{{ image.alt }}"
-         />
+          />
         </picture>
       </div>
     </div>
