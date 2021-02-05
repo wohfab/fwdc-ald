@@ -33,21 +33,21 @@ links: true
   
   {% if homepage.welcome %}
   <h2 id="welcome">Welcome</h2>
-  <div class="">{{ homepage.welcome | safe }}</div>
+  <div class="">{{ homepage.welcome | md | safe }}</div>
   {% else %}
   <p>Hi there! How are you? Welcome to this beautiful website.</p>
   {% endif %} 
   
   {% if homepage.vita %}
   <h2 id="vita">Vita</h2>
-  <div class="">{{ homepage.vita | safe }}</div>
+  <div class="">{{ homepage.vita | md | safe }}</div>
   {% else %}
   <p>The website is under construction. There will be more content soon!</p>
   {% endif %}
   
   {% if homepage.concerts %}
   <h2 id="concerts">Concerts</h2>
-  <div class="">{{ homepage.concerts | safe }}</div>
+  <div class="">{{ homepage.concerts | md | safe }}</div>
   {% else %}
   <p>Sorry, there are no concerts planned at the moment.</p>
   {% endif %} 
