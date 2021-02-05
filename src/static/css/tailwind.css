@@ -16,6 +16,10 @@ body {
   @apply motion-safe:animate-fadeIn;
 }
 
+div#hero-image  {
+  @apply w-full mx-auto transition-all duration-500 md:w-1/2 filter-grayscale hover:filter-none;
+}
+
 h1, h2, h3 {
   @apply my-3 font-bold;
 }

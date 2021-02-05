@@ -3,6 +3,26 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [600, 900],
+    formats: ["webp", "jpeg"],
+    urlPath: "/static/img/",
+    outputDir: "./_site/static/img/",
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
+}
 
 
 module.exports = function (eleventyConfig) {
@@ -63,11 +83,16 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // FILTERS
   eleventyConfig.addFilter("md", function (content = "") {
     return markdownIt({ html: true }).render(content);
   });
-  
 
+  // SHORTCODES
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+  
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
   return {
@@ -76,4 +101,5 @@ module.exports = function (eleventyConfig) {
     },
     htmlTemplateEngine: "njk",
   };
+
 };
