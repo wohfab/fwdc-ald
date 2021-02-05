@@ -57,8 +57,8 @@ links: true
       >
         {% image "./src" + img.src, img.alt %}
       </div>
-      <div class="modal" x-show.transition.duration.300ms="isOpen">
-        <div class="object-cover">{% image "./src" + img.src, img.alt %}</div>
+      <div class="modal" x-show="isOpen">
+        <div class="object-cover" x-show.transition.in.duration.500ms.scale.25.opacity.out.duration.200ms.scale.0.opacity.0="isOpen">{% image "./src" + img.src, img.alt %}</div>
       </div>
     </div>
     {% endfor %}
