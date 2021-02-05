@@ -49,37 +49,21 @@ links: true
   <h2 id="gallery">Gallery</h2>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
     {% for img in homepage.gallery %}
-    {# {% image "{{ img.src }}", "{{ img.alt }}" %} #}
-
-    {# <div class="" x-data="{ isOpen: false }">
-      <picture>
-        {% if image.webp %}
-        <source srcset="{{ image.webp }}" type="image/webp" />
-        {% endif %}
-        <source srcset="{{ image.jpg }}" type="image/jpg" />
-        <img
-          src="{{ image.jpg }}"
-          class="object-cover w-full filter-grayscale js-show-on-scroll"
-          alt="{{ image.alt }}"
+      <div class="" x-data="{ isOpen: false }">
+        <div 
+          class="object-cover w-full filter-grayscale js-show-on.scroll"
           @click="isOpen = true"
           @click.away="isOpen = false"
-          @keydown.escape="isOpen = false"
-        />
-      </picture>
-      <div class="modal" x-show.transition.duration.300ms="isOpen">
-        <picture>
-          {% if image.webp %}
-          <source srcset="{{ image.webp }}" type="image/webp" />
-          {% endif %}
-          <source srcset="{{ image.jpg }}" type="image/jpg" />
-          <img
-            src="{{ image.jpg }}"
-            class="object-cover"
-            alt="{{ image.alt }}"
-          />
-        </picture>
+        >
+          {% image "./src" + img.src, img.alt  %} 
+        </div>
+        <div class="modal" x-show.transition.duration.300ms="isOpen">
+          <div class="object-cover">
+            {% image "./src" + img.src, img.alt  %} 
+          </div>
+        </div>
       </div>
-    </div> #}
     {% endfor %}
+ 
   </div>
 </div>
