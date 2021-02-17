@@ -35,7 +35,6 @@ collections:
               label: "Body",
               name: "body",
               widget: "markdown",
-              default: "XYZ",
             }
           - label: "Gallery"
             label_singular: "Image"
