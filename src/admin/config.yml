@@ -32,15 +32,8 @@ collections:
               default: "vocal jazz & piano.",
             }
           - {
-              label: "Welcome",
-              name: "welcome",
-              widget: "markdown",
-              default: "XYZ",
-            }
-          - { label: "Vita", name: "vita", widget: "markdown", default: "XYZ" }
-          - {
-              label: "Concerts",
-              name: "concerts",
+              label: "Body",
+              name: "body",
               widget: "markdown",
               default: "XYZ",
             }

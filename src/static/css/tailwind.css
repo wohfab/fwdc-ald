@@ -9,7 +9,10 @@ html {
 }
 
 body {
-  @apply text-lg;
+  @apply text-lg text-gray-100;
+}
+body {
+  background-color: #22003a;
 }
 
 div#hero-image {
@@ -26,11 +29,11 @@ h3 {
 }
 
 h1 {
-  @apply pb-2 text-4xl tracking-tighter text-center text-indigo-500 border-b-8 border-indigo-500 lg:text-7xl;
+  @apply pb-2 text-4xl tracking-tighter text-center text-indigo-300 border-b-8 border-indigo-300 lg:text-7xl;
 }
 
 h2 {
-  @apply text-3xl text-indigo-500;
+  @apply text-3xl text-indigo-300;
 }
 
 h3 {
