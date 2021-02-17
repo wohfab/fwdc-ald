@@ -1,14 +1,13 @@
----
 links:
   - title: YouTube
-    url: "https://www.youtube.com/channel/UC0ZyvD5AMgKkDKtQWrP3tNg/videos"
+    url: https://www.youtube.com/channel/UC0ZyvD5AMgKkDKtQWrP3tNg/videos
     desc: Listen to my music on YouTube
   - title: Instagram
-    url: "https://www.instagram.com/anna_lena_delger"
+    url: https://www.instagram.com/anna_lena_delger
     desc: Follow me on Instagram
   - title: Vocability
-    url: "https://vocability.de"
+    url: https://vocability.de
     desc: Follow the a cappella choir, I am conducting
   - title: Contact
-    url: "mailto:"
+    url: mailto:anna-lena.delger@gmx.de
     desc: Contact me via email
