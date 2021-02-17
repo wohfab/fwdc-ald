@@ -49,7 +49,7 @@ collections:
             name: "gallery"
             widget: "list"
             fields:
-              - { label: "Image JPG/PNG", name: "jpg", widget: "image"}
+              - { label: "Image (JPG/PNG)", name: "src", widget: "image"}
               - { label: "Alt Text", name: "alt", widget: "string" }
   - label: "Settings"
     name: "settings"
