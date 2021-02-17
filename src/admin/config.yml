@@ -45,15 +45,11 @@ collections:
               default: "XYZ",
             }
           - label: "Gallery"
+            label_singular: "Image"
             name: "gallery"
             widget: "list"
             fields:
-              - { label: "Image JPG/PNG", name: "jpg", widget: "image" }
-              - label: "Image WEBP"
-                name: "webp"
-                widget: "image"
-                pattern: ['.*\.webp', 'must end in ".webp"']
-                required: false
+              - { label: "Image JPG/PNG", name: "jpg", widget: "image"}
               - { label: "Alt Text", name: "alt", widget: "string" }
   - label: "Settings"
     name: "settings"
@@ -65,9 +61,10 @@ collections:
         file: "src/_data/navigation.yaml"
         fields:
           - label: Nav Items
+            label_singular: "Nav Item"
             name: items
             widget: list
-            allow_add: false
+            allow_add: true
             collapsed: false
             fields:
               - { label: Title, name: text, widget: string }
@@ -76,7 +73,8 @@ collections:
         name: "links"
         file: "src/_data/quicklinks.yaml"
         fields:
-          - label: Nav Items
+          - label: Quick Links
+            label_singular: "Quick Link"
             name: links
             widget: list
             collapsed: false
@@ -89,5 +87,5 @@ collections:
         file: "src/_data/settings.yaml"
         fields:
           - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+          # - { label: Author, name: author, widget: string }
+          # - { label: URL, name: url, widget: string }
