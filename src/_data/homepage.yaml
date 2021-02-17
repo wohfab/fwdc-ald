@@ -22,5 +22,5 @@ concerts: No concerts planned at the moment.
 gallery:
   - src: /static/img/ald.jpg
     alt: Anna-Lena Delger Portrait
-  - src: https://placekitten.com/1000/1000
-    alt: Sweet Cat
+  - src: /static/img/fm.png
+    alt: FM
