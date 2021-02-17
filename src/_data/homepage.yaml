@@ -9,3 +9,5 @@ body: >-
 gallery:
   - src: /static/img/ald.jpg
     alt: Anna-Lena Delger Portrait
+  - src: /static/img/fm.png
+    alt: FM
