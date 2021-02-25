@@ -35,11 +35,15 @@ collections:
               label: "Body",
               name: "body",
               widget: "markdown",
+              buttons: ["heading-two", "heading-three", "heading-four", "bold", "italic", "link", "quote", "bulleted-list", "numbered-list"],
+              editor_components: ["image"],
             }
           - {
               label: "Body English",
               name: "bodyEn",
               widget: "markdown",
+              buttons: ["heading-two", "heading-three", "heading-four", "bold", "italic", "link", "quote", "bulleted-list", "numbered-list"],
+              editor_components: ["image"],
             }
           - label: "Gallery"
             label_singular: "Image"
