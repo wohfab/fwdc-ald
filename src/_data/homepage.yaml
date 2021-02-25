@@ -1,13 +1,13 @@
 title: Anna-Lena Delger
 subtitle: vocal jazz & piano.
 body: >+
-  ## Welcome
+  ## Willkommen
 
 
   Malesuada ornare praesent sapien efficitur tempor cursus iaculis urna justo erat nascetur, et placerat est dolor aliquet elit molestie luctus ligula nibh, neque velit habitant odio ante torquent posuere tincidunt metus primis. Interdum senectus rutrum porta donec sed himenaeos nascetur conubia morbi auctor, feugiat curae facilisis purus fringilla mi urna neque augue. Tempor laoreet etiam proin aptent parturient nostra, vehicula platea turpis bibendum quam sollicitudin in, at lorem class cursus urna.
 
 
-  ## Welcome again
+  ## Hallo
 
 
   Donec tristique sagittis nostra quisque natoque finibus massa taciti, penatibus suspendisse viverra adipiscing conubia tempus tellus, placerat suscipit vestibulum lobortis velit cubilia etiam. Ac ridiculus nibh semper quisque eros aptent orci eu, habitant nascetur enim luctus tortor facilisi vitae potenti, cursus fusce facilisis iaculis per mollis lobortis. Sociosqu ornare fermentum sem sollicitudin curabitur nullam, potenti posuere taciti litora cras, rhoncus platea mattis maximus dui. Egestas cubilia aptent purus tincidunt ullamcorper et litora sapien elementum finibus lacinia, blandit facilisis sed leo pulvinar quisque lobortis phasellus pretium nibh.
@@ -16,7 +16,7 @@ body: >+
   ----
 
 
-  ## Let's test something
+  ## Tests
 
 
   ### Test blockquote
@@ -48,7 +48,8 @@ body: >+
   - Diam non augue potenti per senectus platea ridiculus, tempus leo elementum maximus magnis sed, urna aliquet mauris ex feugiat mus.
 
   - Eleifend adipiscing vestibulum taciti euismod vehicula feugiat sollicitudin, netus massa nec hendrerit parturient tempor blandit, mauris facilisis ad nibh ornare habitasse.
-
+bodyEn: >+
+  ## Welcome to the English page
 gallery:
   - src: /static/img/ald.jpg
     alt: Anna-Lena Delger Portrait

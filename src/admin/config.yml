@@ -36,6 +36,11 @@ collections:
               name: "body",
               widget: "markdown",
             }
+          - {
+              label: "Body English",
+              name: "body-en",
+              widget: "markdown",
+            }
           - label: "Gallery"
             label_singular: "Image"
             name: "gallery"

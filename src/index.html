@@ -28,15 +28,16 @@ links: true
     </div>
   </div>
 
-  {% if homepage.body %}
-  <div class="">{{ homepage.body | md | safe }}</div>
-  {% else %}
-  <p>Hi there! How are you? Welcome to this beautiful website.</p>
-  {% endif %} 
+  <section x-data="{ lang: 'en' }">
+    <div id="lang-switch" class="absolute w-8 h-8 top-6 right-20 md:top-8 md:right-2">
+      <svg alt="EN" title="switch language to german" class="w-full h-full text-pink-500 fill-current" @click="lang = 'en'" x-show="lang == 'de'" id="lang-switch-en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M84,5H16C9.9,5,5,9.6,5,15.3V67c0,5.7,4.9,10.3,11,10.3h7.2v15.3c0,0.9,0.6,1.8,1.5,2.2c0.4,0.2,0.7,0.2,1.1,0.2  c0.6,0,1.2-0.2,1.7-0.5l22.7-17.2H84c6.1,0,11-4.6,11-10.3V15.3C95,9.6,90.1,5,84,5z M47.1,55.5H25V26.3h21.4v5.2H31v6.2h14.2v5.1  H31v7.5h16.2V55.5z M75.5,55.5h-6.1L57.5,34.8v20.7h-5.7V26.3h6.4l11.6,20.4V26.3h5.7V55.5z"></path></svg>
+      <svg alt="DE" title="sprache nach englisch wechseln" class="w-full h-full text-pink-500 fill-current" @click="lang = 'de'" x-show="lang == 'en'" id="lang-switch-de" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><path d="M84,5H16C9.9,5,5,9.6,5,15.3V67c0,5.7,4.9,10.3,11,10.3h7.2v15.3c0,0.9,0.6,1.8,1.5,2.2c0.4,0.2,0.7,0.2,1.1,0.2   c0.6,0,1.2-0.2,1.7-0.5l22.7-17.2H84c6.1,0,11-4.6,11-10.3V15.3C95,9.6,90.1,5,84,5z M47.2,50c-2.1,3.6-5.4,5.4-9.8,5.4H24.8V26.3   h12.6c1.8,0,3.3,0.2,4.5,0.6c2,0.7,3.7,1.9,5,3.7c1,1.5,1.7,3,2.1,4.7c0.4,1.7,0.6,3.3,0.6,4.8C49.6,44.1,48.8,47.4,47.2,50z    M76.4,55.5H54.3V26.3h21.4v5.2H60.3v6.2h14.2v5.1H60.3v7.5h16.2V55.5z"></path><path d="M36.4,31.4h-5.6v19.1h5.6c2.9,0,4.9-1.4,6-4.3c0.6-1.6,0.9-3.4,0.9-5.6c0-3-0.5-5.3-1.4-6.8C41,32.2,39.2,31.4,36.4,31.4z"></path></g></svg>
+    </div>
+    <div x-show="lang == 'de'" class="">{{ homepage.body | md | safe }}</div>
+    <div x-show="lang == 'en'" class="">{{ homepage.bodyEn | md | safe }}</div>
+  </section>
 
-  
-  {% if links %} {% include "./_includes/partials/content.html" %}
-  {% endif %}
+  {% if links %} {% include "./_includes/partials/content.html" %} {% endif %}
 
   <h2 id="gallery">Gallery</h2>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
@@ -50,7 +51,12 @@ links: true
         {% image "./src" + img.src, img.alt %}
       </div>
       <div class="modal" x-show="isOpen">
-        <div class="object-cover" x-show.transition.in.duration.500ms.scale.25.opacity.out.duration.200ms.scale.0.opacity.0="isOpen">{% image "./src" + img.src, img.alt %}</div>
+        <div
+          class="object-cover"
+          x-show.transition.in.duration.500ms.scale.25.opacity.out.duration.200ms.scale.0.opacity.0="isOpen"
+        >
+          {% image "./src" + img.src, img.alt %}
+        </div>
       </div>
     </div>
     {% endfor %}
